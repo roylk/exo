@@ -1,0 +1,70 @@
+
+/* VARIABLES */
+:root {
+    --dark: rgb(15, 15, 15);
+    --light: rgb(246, 242, 242);
+    --main: rgb(28, 143, 209);
+  }
+  
+  /* RESET */
+*, *::after, *::before { box-sizing: border-box; } /*la dimension des bloc inclura les margin et les padding à tous les niveaux*/
+
+body {
+    margin:0;
+    font-family: "Inter", sans-serif;
+}
+
+a { 
+    text-decoration: none; 
+}
+
+/* HEADER & FOOTER */
+header, footer {
+  background-color: var(--dark);
+  padding: 1rem;
+  color: var(--light);
+}
+
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;/*ecart entre les blocs du box*/
+  }
+
+  header nav a { color: var(--light); }
+
+/*LAYOUT*/
+.container{
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* CARDS */
+.card {
+    box-shadow: .125rem .125rem 10px rgba(0,0,0,.15);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 900px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    nav {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  }
